@@ -69,6 +69,11 @@ def signup():
 def home():
     return render_template("home.html")
 
+@app.route('/post_home')
+def post_home():
+    return render_template("post_home.html")
+
+
 
 
 
@@ -86,7 +91,7 @@ def post_food():
                       "image": image,
                       "UID" : UID}
             db.child("Tweets").push(tweet)
-            return redirect(url_for('tweets'))
+            return redirect(url_for('food'))
         except:
             print("Couldn't add tweet")
    
@@ -94,12 +99,73 @@ def post_food():
 
     return render_template("post_food.html")
 
+
+
+
+@app.route('/post_fast_food', methods=['GET', 'POST'])
+def post_fast_food():
+    if request.method == 'POST':
+        Title2 = request.form['Title2']
+        Text2 = request.form['Text2']
+        image2 = request.form['image2']
+        UID = login_session['user']['localId']
+
+        try:
+            tweet2 = {"Title2": Title2,
+                      "Text2": Text2, 
+                      "image2": image2,
+                      "UID" : UID}
+            db.child("fast").push(tweet2)
+            return redirect(url_for('fast_food'))
+        except:
+            print("Couldn't add tweet")
+   
+
+
+    return render_template("post_fast_food.html")
+
+@app.route('/post_cakes', methods=['GET', 'POST'])
+def post_cakes():
+    if request.method == 'POST':
+        Title4 = request.form['Title4']
+        Text4 = request.form['Text4']
+        image4 = request.form['image4']
+        UID = login_session['user']['localId']
+
+        try:
+            tweet3 = {"Title4": Title4,
+                      "Text4": Text4, 
+                      "image4": image4,
+                      "UID" : UID}
+            db.child("cakes").push(tweet3)
+            return redirect(url_for('cakes'))
+        except:
+            print("Couldn't add tweet")
+   
+
+
+    return render_template("post_cakes.html")
+    
     
 
 @app.route('/food')
 def food():
     tweet1=db.child("Tweets").get().val()
     return render_template("food.html", tweet1=tweet1)
+
+
+@app.route('/fast_food')
+def fast_food():
+    tweet11=db.child("fast").get().val()
+    return render_template("fast_food.html", tweet11=tweet11)
+
+
+@app.route('/cakes')
+def cakes():
+    tweet12=db.child("cakes").get().val()
+    return render_template("cakes.html", tweet12=tweet12)
+
+
 
 
 if __name__ == '__main__':

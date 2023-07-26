@@ -3,9 +3,34 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>fast food</title>
+	<title>food</title>
+	<link rel="stylesheet" type="text/css" href="static/css/food.css">
+	
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    
+    <a href="home" class="w3-bar-item w3-button">home</a>
+    <a href="post_home" class="w3-bar-item w3-button">Add fod</a>
+    
+  </div>
+</div>
 
+<div class="card">
+  {% for tweet2 in tweet11 %}
+  <div class="card-image"><img src="{{ tweet11[tweet2]['image2'] }}"></div>
+  <div class="card-text">
+    
+    <h2>{{ tweet11[tweet2]['Title2'] }} </h2>
+    <p>{{ tweet11[tweet2]['Text2'] }}</p>
+  </div>
+  {% endfor %}
+  </div>
+
+
+
+</script>
 </body>
 </html>
