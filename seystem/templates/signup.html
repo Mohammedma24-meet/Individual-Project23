@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <link rel="stylesheet" href="static/css/signup.css"> 
+</head>
+<body>
+    <span class="avatar"><img src="static/Tha good chefmode.png" alt="" /></span>
+    <form method="post" action="/signup">
+        <!-- Heading -->
+            <div class="form-box">
+                <div class="header-text">
+                    <h4>Create an account</h4>
+                </div>
+            <input placeholder="full name" type="full_name"  name="full_name" id="full_name" required>
+            
+            <input placeholder="username" type="username"  name="username" id="username" required>
+            
+            <input placeholder="bio" type="bio"  name="bio" id="bio" required maxlength="280">
+            
+            <input placeholder="Email address" type="email"  name="email" id="emailStr" required>
+            
+            <input placeholder="Password" type="password"  name="password" minlength="6">
+            
+
+            <button>signup</button>
+            <span>If you have an account <a href="/">signin</a></span>
+        </div>
+    </form>
+    
+</body>
+</html>

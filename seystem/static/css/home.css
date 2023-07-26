@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: poppins;
+  font-size: 16px;
+  color: #fff;
+}
+.avatar img {
+        border-radius: 100%;
+        display: block;
+        width: 10em;
+        margin-left: auto;
+        margin-right: auto;
+}
+.form-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: auto auto;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+
+}
+.form-box:before {
+  background-image: url("https://mediaaws.almasryalyoum.com/news/verylarge/2018/02/20/782591_0.jpg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+  filter: blur(2px);
+}
+
+.form-box .header-text {
+  margin: auto auto;
+  font-size: 50px;
+  font-weight: 600;
+  padding-bottom: 5px;
+  text-align: center;
+  color: orange;
+  margin: 200px auto;
+}
+
+
+.container {
+
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: orange;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.text button {
+  background-color: orange;
+  color: #fff;
+/*  border: none;*/
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  padding: 20px;
+  margin: 30px 0px;
+  border-radius: 500px;
+}
